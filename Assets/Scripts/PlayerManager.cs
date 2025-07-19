@@ -81,6 +81,7 @@ public class PlayerManager : SceneSingleton<PlayerManager>
             this.weight += data.weight;
             this.maxFuel += data.fuel;
             this.speed += data.speed;
+            
         }
 
     }

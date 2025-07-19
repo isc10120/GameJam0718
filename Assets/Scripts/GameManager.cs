@@ -26,8 +26,8 @@ public class GameManager : Singleton<GameManager>
         resetButton.GetComponent<Button>().onClick.AddListener(ResetGame);
 
         // test용 파츠 생성
-        rocketParts.Add(Instantiate(basePart, new Vector3(0f, -3f, 0f), Quaternion.identity));
-        rocketParts.Add(Instantiate(basePart, new Vector3(1f, -3f, 0f), Quaternion.identity));
+        rocketParts.Add(Instantiate(basePart));
+        rocketParts.Add(Instantiate(basePart));
         foreach (var part in rocketParts)
         {
             part.GetComponent<CollisionInGame>().enabled = false;

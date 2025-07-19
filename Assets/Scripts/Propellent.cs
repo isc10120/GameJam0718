@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Propellent : PartInit
+public abstract class Propellent : MonoBehaviour
 {
 
     protected Rigidbody parentRb;      // ºÎ¸ð Rigidbody
@@ -12,7 +12,6 @@ public abstract class Propellent : PartInit
 
      protected virtual void Start()
     {
-        base.Start();
         
         parentRb = GetComponentInParent<Rigidbody>();
         Debug.Log(parentRb);

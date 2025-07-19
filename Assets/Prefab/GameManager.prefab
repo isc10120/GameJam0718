@@ -1091,7 +1091,7 @@ PrefabInstance:
     - target: {fileID: 7718122773547493924, guid: 3687c437ccb3f214c8a976d32a38421f, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: d0067c8d67b6b374dbbbac016557183d, type: 2}
+      objectReference: {fileID: 9100000, guid: 729c757eb8f8c6945861f056ffc9a939, type: 2}
     - target: {fileID: 7920618987469538874, guid: 3687c437ccb3f214c8a976d32a38421f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

@@ -18,6 +18,8 @@ public class PartDataManager : MonoBehaviour
 
     void getKeyCode()
     {
+        Debug.Log(transform.Find("Canvas/IdleKey"));
+        Debug.Log(transform.Find("Canvas/IdleKey").GetComponent<IdleKey>());
         keyCode = transform.Find("Canvas/IdleKey").GetComponent<IdleKey>().GetMappedKeyCode(); // 키 코드 설정
     }
 }

@@ -9,6 +9,10 @@ public class PropellentPart : Propellent
     protected override void Start()
     {
         base.Start();
+    }
+
+    private void OnEnable()
+    {
         keyCode = GetComponent<PartDataManager>().keyCode;
     }
 
@@ -19,6 +23,7 @@ public class PropellentPart : Propellent
         {
             // 자식의 로컬 방향을 월드 방향으로 변환
             Vector3 worldThrustDir = transform.TransformDirection(localThrustDir);
+            Debug.Log(parentRb);
             parentRb.AddForceAtPosition(worldThrustDir * thrustPower, transform.position);
             PlayerManager.Instance.FuelUpdate(useFuel);
         }

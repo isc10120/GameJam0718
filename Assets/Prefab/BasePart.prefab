@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5737023101550197515}
   - component: {fileID: 8033453665338274028}
   m_Layer: 5
-  m_Name: IdelKey
+  m_Name: IdleKey
   m_TagString: IdleKey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

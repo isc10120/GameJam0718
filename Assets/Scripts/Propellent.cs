@@ -13,8 +13,9 @@ public abstract class Propellent : PartInit
      protected virtual void Start()
     {
         base.Start();
-        Debug.Log("hi");
+        
         parentRb = GetComponentInParent<Rigidbody>();
+        Debug.Log(parentRb);
         localThrustDir = new Vector3(0, transform.rotation.eulerAngles.z == 0 ? 90 : transform.rotation.eulerAngles.z, 0);
     }
 

@@ -18173,7 +18173,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4463610000308357422, guid: 25ba167920b9bbc498ce21c5b3b3af2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.93
+      value: -1.97
       objectReference: {fileID: 0}
     - target: {fileID: 4463610000308357422, guid: 25ba167920b9bbc498ce21c5b3b3af2e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18214,14 +18214,6 @@ PrefabInstance:
     - target: {fileID: 6689747657868586174, guid: 25ba167920b9bbc498ce21c5b3b3af2e, type: 3}
       propertyPath: m_Name
       value: Jetpack Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 6689747657868586174, guid: 25ba167920b9bbc498ce21c5b3b3af2e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082642058503760705, guid: 25ba167920b9bbc498ce21c5b3b3af2e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

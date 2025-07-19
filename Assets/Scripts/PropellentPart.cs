@@ -14,6 +14,9 @@ public class PropellentPart : MonoBehaviour
     public float mainThrust = 1f;       // 위로 가는 기본 추진력
     public float sideThrust = 0.1f;
 
+    public GameObject fire;
+    bool isFire = false;
+
     void Start()
     {
         GameManager.Instance.onGameStart += getKeyCode;
@@ -28,6 +31,12 @@ public class PropellentPart : MonoBehaviour
     {
         if (Input.GetKey(keyCode))
         {
+            if(!isFire)
+            {
+                fire.SetActive(true);
+                isFire = true;
+            }
+
             parentRb = GetComponentInParent<Rigidbody>();
             //Debug.Log("plz");
             // 자식의 로컬 방향을 월드 방향으로 변환
@@ -50,6 +59,12 @@ public class PropellentPart : MonoBehaviour
             // 부모 Rigidbody에 위치 기반 힘 가하기
             parentRb.AddForceAtPosition(finalForce, thrustPosition, ForceMode.Force);
             PlayerManager.Instance.FuelUpdate(useFuel);
+        }
+
+        if(Input.GetKeyUp(keyCode))
+        {
+            fire.SetActive(false);
+            isFire = false;
         }
 
     }

@@ -16,6 +16,7 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] GameObject startButton;
     [SerializeField] GameObject resetButton;
+    [SerializeField] GameObject KeyBoardUI; // 키보드 UI
     [SerializeField] GameObject endPanel; // 게임 종료 UI 패널
 
     void Start()
@@ -36,6 +37,7 @@ public class GameManager : Singleton<GameManager>
             part.SetActive(false); // 파츠 비활성화
         }
         startButton.SetActive(false); // 시작 버튼 비활성화
+        KeyBoardUI.SetActive(false); // 키보드 UI 비활성화
         rocket.GetComponent<Rigidbody>().isKinematic = false; // 로켓 키네마틱 해제 (기본 활성화)
         Debug.Log("Game Started");
     }
@@ -72,6 +74,7 @@ public class GameManager : Singleton<GameManager>
         endPanel.SetActive(false); // 게임 종료 UI 패널 비활성화
         resetButton.SetActive(false); // 리셋 버튼 비활성화
         startButton.SetActive(true); // 시작 버튼 활성화
+        KeyBoardUI.SetActive(true); // 키보드 UI 활성화
         Debug.Log("Game Reset");
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - IdleKey
   - Part
   - Enemy
+  - Ground
   layers:
   - Default
   - TransparentFX

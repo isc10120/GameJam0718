@@ -17,6 +17,7 @@ public class DragObject : MonoBehaviour
         cam = GameObject.Find("Camera").GetComponent<Camera>();
         idleKey = keyMappingUI.GetComponent<IdleKey>();
         GameManager.Instance.onGameStart += () => {enabled = false;};
+        GameManager.Instance.onGameEnd += () => {enabled = true;}; // 게임 종료 시 활성화
     }
 
     private void OnCollisionEnter(Collision other) 

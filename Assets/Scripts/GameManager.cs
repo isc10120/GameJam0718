@@ -25,15 +25,7 @@ public class GameManager : Singleton<GameManager>
         startButton.GetComponent<Button>().onClick.AddListener(StartGame);
         resetButton.GetComponent<Button>().onClick.AddListener(ResetGame);
 
-        // test용 파츠 생성
-        rocketParts.Add(Instantiate(basePart));
-        rocketParts.Add(Instantiate(basePart));
-        foreach (var part in rocketParts)
-        {
-            part.GetComponent<CollisionInGame>().enabled = false;
-            part.GetComponent<Rigidbody>().isKinematic = false;
-            part.GetComponent<Collider>().isTrigger = false; 
-        }
+        
         ResetGame();
     }
 
@@ -61,10 +53,16 @@ public class GameManager : Singleton<GameManager>
     public void EndGame()  // 땅에 닿을 시 호출
     {
         onGameEnd?.Invoke();
-        foreach (var part in attachedParts)
+
+        HashSet<GameObject> _attachedParts = new HashSet<GameObject>(GameManager.Instance.attachedParts);
+        foreach (var part in _attachedParts)
         {
+            part.AddComponent<Rigidbody>(); // Rigidbody 추가
             part.GetComponent<DragObject>().DettachRocketPart(); // 로켓에서 분리
+            attachedParts.Add(part);
+            rocketParts.Remove(part);
         }
+        _attachedParts.Clear();
 
         // TODO: UI 띄우기
         endPanel.SetActive(true); // 게임 종료 UI 패널 활성화
@@ -74,12 +72,23 @@ public class GameManager : Singleton<GameManager>
 
     public void ResetGame()  // 게임 리셋 버튼 누를 시 호출
     {
+        // test용 파츠 생성
+        rocketParts.Add(Instantiate(basePart));
+        rocketParts.Add(Instantiate(basePart));
+        foreach (var part in rocketParts)
+        {
+            part.GetComponent<CollisionInGame>().enabled = false;
+            part.GetComponent<Rigidbody>().isKinematic = false;
+            part.GetComponent<Collider>().isTrigger = false; 
+        }
+        
         onGameReset?.Invoke();
         foreach (var part in attachedParts)
         {
             Destroy(part); // 로켓에서 분리된 파츠 제거
         }
-        rocket.transform.position = new Vector3(0f, -3f, 0f); // 로켓 위치 초기화
+        rocket.transform.position = new Vector3(0f, 0f, 0f); // 로켓 위치 초기화
+        rocket.transform.rotation = Quaternion.identity; // 로켓 회전 초기화
         rocket.GetComponent<Rigidbody>().isKinematic = true; // 로켓 키네마틱
         foreach (var part in rocketParts)
         {

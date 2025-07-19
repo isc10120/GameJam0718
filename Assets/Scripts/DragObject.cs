@@ -18,6 +18,8 @@ public class DragObject : MonoBehaviour
         idleKey = keyMappingUI.GetComponent<IdleKey>();
         GameManager.Instance.onGameStart += () => {enabled = false;};
         GameManager.Instance.onGameEnd += () => {enabled = true;}; // 게임 종료 시 활성화
+
+        GameManager.Instance.onGameStart += () => { keyMappingUI.SetActive(false); }; // 게임 시작 시 비활성화
     }
 
     private void OnCollisionEnter(Collision other) 

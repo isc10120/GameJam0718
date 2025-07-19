@@ -121,6 +121,8 @@ MonoBehaviour:
   localThrustDir: {x: 90, y: 0, z: 0}
   thrustPower: 0.1
   useFuel: 1
+  mainThrust: 1
+  sideThrust: 0.1
 --- !u!1 &5016663438093575194
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,8 +169,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   xMargin: 1
-  obstaclePrefab: {fileID: 8801405063568220103, guid: bb4deeac828b027408f8c996d6127bdc, type: 3}
+  obstaclePrefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   power: 5
+  spawnTime: 3
+  level_1: 0
+  level_2: 0
+  level_3: 0
+  obj1: {fileID: 6985699969045462821, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
+  obj2: {fileID: 1313978698152854425, guid: 9b91ade9543b2304d91e04458f5668de, type: 3}
+  obj3: {fileID: 6985699969045462821, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
+  height1: 30
+  height2: 60
 --- !u!1001 &3770486588690526554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -261,6 +275,8 @@ MonoBehaviour:
   localThrustDir: {x: 0, y: 0, z: 0}
   thrustPower: 0.03
   useFuel: 0.05
+  mainThrust: 0.1
+  sideThrust: 1
 --- !u!136 &3217403254668257935
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -310,7 +326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b9a95e0cc99b2354aac3391c2d948a03, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.31
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b9a95e0cc99b2354aac3391c2d948a03, type: 3}
       propertyPath: m_LocalPosition.z
@@ -409,9 +425,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4087157830289160423}
   serializedVersion: 4
-  m_Mass: 0.5
+  m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -426,7 +442,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 16
+  m_Constraints: 48
   m_CollisionDetection: 0
 --- !u!64 &1063054517999466613
 MeshCollider:
@@ -462,7 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f21bb2114897141b998fc2b2f28be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 15
+  force: 1
   rotationSpeed: 5
 --- !u!1001 &4991838701110332888
 PrefabInstance:
@@ -516,6 +532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parts_Solar Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fd143a123c39ad441bc763498f9e0a31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -567,6 +587,18 @@ PrefabInstance:
     - target: {fileID: 7306701924385859955, guid: b99c7e6508ed0aa4781e65c557876c5a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868923225347460698, guid: b99c7e6508ed0aa4781e65c557876c5a, type: 3}
+      propertyPath: mainThrust
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868923225347460698, guid: b99c7e6508ed0aa4781e65c557876c5a, type: 3}
+      propertyPath: sideThrust
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868923225347460698, guid: b99c7e6508ed0aa4781e65c557876c5a, type: 3}
+      propertyPath: thrustPower
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7887220671037929276, guid: b99c7e6508ed0aa4781e65c557876c5a, type: 3}
       propertyPath: target

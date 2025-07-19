@@ -36,6 +36,10 @@ public class GameManager : Singleton<GameManager>
         {
             part.SetActive(false); // 파츠 비활성화
         }
+        foreach (var part in attachedParts)
+        {
+            Destroy(part.GetComponent<Rigidbody>()); // 로켓에 부착된 파츠의 Rigidbody 제거
+        }
         startButton.SetActive(false); // 시작 버튼 비활성화
         KeyBoardUI.SetActive(false); // 키보드 UI 비활성화
         rocket.GetComponent<Rigidbody>().isKinematic = false; // 로켓 키네마틱 해제 (기본 활성화)

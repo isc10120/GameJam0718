@@ -117,10 +117,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localThrustDir: {x: 0, y: 0, z: 0}
-  thrustPower: 0.03
-  useFuel: 0.05
-  mainThrust: 1
-  sideThrust: 0.1
+  thrustPower: 5
+  useFuel: 0.01
+  mainThrust: 3
+  sideThrust: 2
 --- !u!54 &1124368844358715973
 Rigidbody:
   m_ObjectHideFlags: 0

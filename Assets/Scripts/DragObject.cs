@@ -54,7 +54,11 @@ public class DragObject : MonoBehaviour
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             Vector3 point = ray.GetPoint(distance);
-            transform.position = new Vector3(point.x, point.y, transform.position.z);
+            transform.position = new Vector3(point.x, point.y, 0f);
+            if (Input.GetMouseButton(1)) // 1 == 우클릭
+            {
+                transform.Rotate(0f, 0f, -90f * Time.deltaTime);
+            }
         }
     }
 
@@ -65,6 +69,15 @@ public class DragObject : MonoBehaviour
         GameManager.Instance.rocketParts.Remove(gameObject);
         gameObject.transform.SetParent(GameManager.Instance.rocket.transform); // 로켓의 자식으로 설정
         gameObject.GetComponent<Rigidbody>().isKinematic = true; // 로켓에 부착된 파츠는 물리엔진 영향을 받지 않음
+
+        // // 파츠의 회전 초기화
+        // Vector3 rot = transform.eulerAngles;
+        // rot.x = 0f;
+        // transform.eulerAngles = rot;
+
+        // // Z축 위치 로켓과 동일하게 설정
+        // transform.position = new Vector3(transform.position.x, transform.position.y, GameManager.Instance.rocket.transform.position.z); 
+
         gameObject.tag = "Rocket";
         keyMappingUI.SetActive(true);
         // TODO: 로켓정보 수정 PlayerManager

@@ -21,6 +21,7 @@ public class CollisionInGame : MonoBehaviour
             gameObject.SetActive(false); // 파츠 획득 시 비활성화
             GetComponent<Rigidbody>().isKinematic = false;
             GetComponent<Collider>().isTrigger = false; // 물리엔진 활성화
+            GetComponent<DragObject>().enabled = true; // 드래그 가능하게 설정
         }
     }
 

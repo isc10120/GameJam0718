@@ -34,11 +34,11 @@ RectTransform:
   - {fileID: 4252044594812395470}
   m_Father: {fileID: 1954013542256533810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 100}
-  m_Pivot: {x: 1, y: 0}
+  m_SizeDelta: {x: 600, y: 100}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &1123320095910775986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 308150658933468591}
   - component: {fileID: 6768616775872145884}
   - component: {fileID: 2325109812169492476}
+  - component: {fileID: 1015858876883184295}
   m_Layer: 5
   m_Name: GameManager
   m_TagString: Untagged
@@ -494,12 +495,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df113b3e57021d145a221cce678d6c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rocketRelease: {fileID: 1015858876883184295}
   rocket: {fileID: 0}
   startButton: {fileID: 598750693143604553}
   resetButton: {fileID: 4990390109110771937}
   KeyBoardUI: {fileID: 3483017304644362021}
   endPanel: {fileID: 7258948666963485072}
-  basePart: {fileID: 8289893101639253890, guid: 692e20df88a8f134ea36e4fedec8c5cc, type: 3}
+  basePart: {fileID: 7306701924385859955, guid: b99c7e6508ed0aa4781e65c557876c5a, type: 3}
+--- !u!114 &1015858876883184295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038593822440336768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf889d61edb75d14c9584767f6ffbc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7258948666963485072
 GameObject:
   m_ObjectHideFlags: 0

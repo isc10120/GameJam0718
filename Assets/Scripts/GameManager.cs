@@ -36,6 +36,8 @@ public class GameManager : Singleton<GameManager>
     {
         onGameReady?.Invoke();
         onGameStart?.Invoke();
+        onGameReady = null;
+        onGameStart = null;
         foreach (var part in rocketParts)
         {
             part.SetActive(false); // 파츠 비활성화
@@ -53,6 +55,7 @@ public class GameManager : Singleton<GameManager>
     public void EndGame()  // 땅에 닿을 시 호출
     {
         onGameEnd?.Invoke();
+        onGameEnd = null;
 
         HashSet<GameObject> _attachedParts = new HashSet<GameObject>(GameManager.Instance.attachedParts);
         foreach (var part in _attachedParts)
@@ -83,10 +86,12 @@ public class GameManager : Singleton<GameManager>
         }
         
         onGameReset?.Invoke();
+        onGameReset = null;
         foreach (var part in attachedParts)
         {
             Destroy(part); // 로켓에서 분리된 파츠 제거
         }
+        attachedParts.Clear();
         rocket.transform.position = new Vector3(0f, 0f, 0f); // 로켓 위치 초기화
         rocket.transform.rotation = Quaternion.identity; // 로켓 회전 초기화
         rocket.GetComponent<Rigidbody>().isKinematic = true; // 로켓 키네마틱

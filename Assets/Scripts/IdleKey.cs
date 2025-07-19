@@ -21,7 +21,7 @@ public class IdleKey : MonoBehaviour, IDropHandler
         idleAnimation = animator.runtimeAnimatorController; // 기본 애니메이션 저장
         keyboard = GameObject.Find("KeyBoard"); // 키보드 오브젝트 찾기
         GameManager.Instance.onGameStart += () => { gameObject.SetActive(false); }; // 게임 시작 시 비활성화
-        GameManager.Instance.onGameStart += () => { gameObject.SetActive(true); }; // 게임 시작 시 비활성화
+        GameManager.Instance.onGameReset += () => { gameObject.SetActive(true); }; // 게임 리셋 시 활성화
         gameObject.SetActive(false); // IdleKey 오브젝트 비활성화
     }
     public void OnDrop(PointerEventData eventData)

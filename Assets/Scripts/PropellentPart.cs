@@ -9,13 +9,13 @@ public class PropellentPart : Propellent
     protected override void Start()
     {
         base.Start();
-        // keyCode = GetComponent<PartDataManager>().keyCode;
+        keyCode = GetComponent<PartDataManager>().keyCode;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Z))
+        if (Input.GetKey(keyCode))
         {
             // 자식의 로컬 방향을 월드 방향으로 변환
             Vector3 worldThrustDir = transform.TransformDirection(localThrustDir);

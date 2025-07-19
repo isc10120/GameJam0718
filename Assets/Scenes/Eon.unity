@@ -4360,7 +4360,7 @@ GameObject:
   - component: {fileID: 353996115}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17077,7 +17077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f21bb2114897141b998fc2b2f28be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10
+  force: 15
   rotationSpeed: 5
 --- !u!1001 &1322168198
 PrefabInstance:
@@ -28856,6 +28856,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fc5fc50e22c334c4ebcfd8f2dc501e0d, type: 3}
       propertyPath: m_Name
       value: Rocket_Jetpack_Auto
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc5fc50e22c334c4ebcfd8f2dc501e0d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

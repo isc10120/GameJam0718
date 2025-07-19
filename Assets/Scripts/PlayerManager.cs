@@ -71,11 +71,17 @@ public class PlayerManager : SceneSingleton<PlayerManager>
         indicator.anchoredPosition = newPosition;
     }
 
-    public void GetPlayerInfo()
+    public void SetPlayerInfo()
     {
-        for (int i = 0; i < 3; i++)
+
+        foreach (GameObject parts in GameManager.Instance.attachedParts)
         {
-            // 파츠매니저에 붙어있는 파츠들의 정보 얻어와서 durability, weight, maxfuel에 추가 
+            PartDataManager data = parts.GetComponent<PartDataManager>();
+            this.durability += data.durability;
+            this.weight += data.weight;
+            this.maxFuel += data.fuel;
+            this.speed += data.speed;
         }
+
     }
 }

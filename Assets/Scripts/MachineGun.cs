@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MachineGun : MonoBehaviour
+public class MachineGun : PartInit
 {
     public GameObject bulletPrefab;
     public Transform firePoint;        
@@ -11,9 +11,17 @@ public class MachineGun : MonoBehaviour
     public float fireCooldown = 0.5f; // 발사 쿨타임 (0.5초)
     private float lastFireTime = -Mathf.Infinity;
 
+    private KeyCode keyCode;
+
+    protected override void Start()
+    {
+        base.Start();
+        keyCode = GetComponent<PartDataManager>().keyCode;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time >= lastFireTime + fireCooldown)
+        if (Input.GetKeyDown(keyCode) && Time.time >= lastFireTime + fireCooldown)
         {
             Fire();
             lastFireTime = Time.time;

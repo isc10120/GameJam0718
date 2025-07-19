@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Propellent : MonoBehaviour
+public abstract class Propellent : PartInit
 {
 
     protected Rigidbody parentRb;      // ºÎ¸ð Rigidbody
@@ -12,6 +12,7 @@ public abstract class Propellent : MonoBehaviour
 
      protected virtual void Start()
     {
+        base.Start();
         Debug.Log("hi");
         parentRb = GetComponentInParent<Rigidbody>();
         localThrustDir = new Vector3(0, transform.rotation.eulerAngles.z == 0 ? 90 : transform.rotation.eulerAngles.z, 0);

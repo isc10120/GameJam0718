@@ -19,10 +19,22 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] GameObject KeyBoardUI; // 키보드 UI
     [SerializeField] GameObject endPanel; // 게임 종료 UI 패널
 
+    public GameObject basePart;
     void Start()
     {
         startButton.GetComponent<Button>().onClick.AddListener(StartGame);
         resetButton.GetComponent<Button>().onClick.AddListener(ResetGame);
+
+        // test용 파츠 생성
+        rocketParts.Add(Instantiate(basePart, new Vector3(0f, -3f, 0f), Quaternion.identity));
+        rocketParts.Add(Instantiate(basePart, new Vector3(1f, -3f, 0f), Quaternion.identity));
+        foreach (var part in rocketParts)
+        {
+            part.GetComponent<CollisionInGame>().enabled = false;
+            part.GetComponent<Rigidbody>().isKinematic = false;
+            part.GetComponent<Collider>().isTrigger = false; 
+        }
+        ResetGame();
     }
 
     /// <summary>

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rocket
+  - IdleKey
+  - Part
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -64,6 +64,7 @@ public class DragObject : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().isKinematic = true; // 로켓에 부착된 파츠는 물리엔진 영향을 받지 않음
         gameObject.tag = "Rocket";
         keyMappingUI.SetActive(true);
+        // TODO: 로켓정보 수정 PlayerManager
     }
 
     public void DettachRocketPart()
@@ -74,8 +75,9 @@ public class DragObject : MonoBehaviour
         GameManager.Instance.rocketParts.Add(gameObject);
         gameObject.transform.SetParent(null); // 로켓의 자식에서 제거
         gameObject.GetComponent<Rigidbody>().isKinematic = false; // 물리엔진 영향 받음
-        gameObject.tag = "Untagged"; // 태그 초기화
+        gameObject.tag = "Part"; // 태그 초기화
         keyMappingUI.SetActive(false);
         idleKey.ResetKey(); // IdleKey로 초기화
+        // TODO: 로켓정보 수정 PlayerManager
     }
 }

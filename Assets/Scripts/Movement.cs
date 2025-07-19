@@ -23,22 +23,22 @@ public class Movement : MonoBehaviour
     {
         moveDirection = Vector3.zero;
 
-        //bool isQ = Input.GetKey(KeyCode.Q);
-        //bool isE = Input.GetKey(KeyCode.E);
+        bool isQ = Input.GetKey(KeyCode.Q);
+        bool isE = Input.GetKey(KeyCode.E);
 
-        //if (isQ)
-        //{
-        //    // 오른쪽 위 (왼쪽 추진체 작동)
-        //    moveDirection += (transform.up + transform.right).normalized;
-        //    //moveDirection += (Vector3.up + Vector3.right).normalized;
-        //}
+        if (isQ)
+        {
+            // 오른쪽 위 (왼쪽 추진체 작동)
+            moveDirection += (transform.up + transform.right).normalized;
+            //moveDirection += (Vector3.up + Vector3.right).normalized;
+        }
 
-        //if (isE)
-        //{
-        //    // 왼쪽 위 (오른쪽 추진체 작동)
-        //    moveDirection += (transform.up - transform.right).normalized;
-        //    //moveDirection += (Vector3.up + Vector3.left).normalized;
-        //}
+        if (isE)
+        {
+            // 왼쪽 위 (오른쪽 추진체 작동)
+            moveDirection += (transform.up - transform.right).normalized;
+            //moveDirection += (Vector3.up + Vector3.left).normalized;
+        }
 
         // 이동 힘 적용
         if (moveDirection != Vector3.zero)

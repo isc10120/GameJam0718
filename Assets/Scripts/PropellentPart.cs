@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class PropellentPart : Propellent
+public class PropellentPart : Propellent
 {
-
     private KeyCode keyCode;
 
     protected override void Start()
     {
+        base.Start();
         // keyCode = GetComponent<PartDataManager>().keyCode;
     }
 

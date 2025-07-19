@@ -7,11 +7,17 @@ public class PlayerManager : SceneSingleton<PlayerManager>
 {
     public GameObject player;
 
+    [Header("Info")]
+    public float durability;
+    public float weight;
+    public float speed;
+
     public float maxFuel = 100f;
     public float currentFuel;
     public Image fuelFillImage;
     public float fuelFillSpeed = 0.5f;
 
+    [Header("Distance")]
     public Image distanceImage;
     public RectTransform indicator;
     public float startY = 0f;       // 시작 위치 X
@@ -63,5 +69,13 @@ public class PlayerManager : SceneSingleton<PlayerManager>
         Vector2 newPosition = indicator.anchoredPosition;
         newPosition.y = arrowY;
         indicator.anchoredPosition = newPosition;
+    }
+
+    public void GetPlayerInfo()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            // 파츠매니저에 붙어있는 파츠들의 정보 얻어와서 durability, weight, maxfuel에 추가 
+        }
     }
 }

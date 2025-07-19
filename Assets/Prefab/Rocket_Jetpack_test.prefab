@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localThrustDir: {x: 0, y: 0, z: 0}
-  thrustPower: 0.03
+  thrustPower: 5
   useFuel: 0.05
 --- !u!136 &1261461528585175132
 CapsuleCollider:

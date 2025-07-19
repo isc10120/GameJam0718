@@ -39,7 +39,7 @@ public class PropellentPart : MonoBehaviour
     {
         parentRb = GetComponentInParent<Rigidbody>();
         Debug.Log(parentRb);
-        localThrustDir = new Vector3(0, 90, 0);//transform.rotation.eulerAngles.z == 0 ? 90 : transform.rotation.eulerAngles.z, 0);
+        localThrustDir = Vector3.up;//new Vector3(0, 90, 0);//transform.rotation.eulerAngles.z == 0 ? 90 : transform.rotation.eulerAngles.z, 0);
         GameManager.Instance.onGameStart -= SettingPropellent;
     }
 

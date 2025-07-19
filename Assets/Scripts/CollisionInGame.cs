@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class CollisionInGame : MonoBehaviour
 {
+
+    private void Start() {
+        if(tag == "LevelUP"){
+            GameManager.Instance.onGameStart += () => {gameObject.SetActive(true);};
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Rocket" && gameObject.tag == "Enemy")
+        if (other.tag == "Rocket" && tag == "Enemy")
         {
             Debug.Log("Collision with Rocket and Enemy: " + gameObject.name);
-            // TODO: PlayerManager.Instance 내구도 -1, 파괴연출?
+            PlayerManager.Instance.durability -= 1;
             Destroy(gameObject);
         }
-        if (other.tag == "Rocket" && gameObject.tag == "Part")
+        if (other.tag == "Rocket" && tag == "Part")
         {
             Debug.Log("Get Part: " + gameObject.name);
             GameManager.Instance.rocketParts.Add(gameObject);
@@ -23,10 +29,15 @@ public class CollisionInGame : MonoBehaviour
             GetComponent<Collider>().isTrigger = false; // 물리엔진 활성화
             GetComponent<DragObject>().enabled = true; // 드래그 가능하게 설정
         }
+        if (other.tag == "Rocket" && tag == "LevelUP")
+        {
+            Debug.Log("LevelUP: " + ++ObstacleSpawner.Instance.level);
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnCollisionEnter(Collision other) {
-        if (other.gameObject.tag == "Rocket" && gameObject.tag == "Ground")
+        if (other.gameObject.tag == "Rocket" && tag == "Ground")
         {
             Debug.Log("Collision with Rocket and Ground");
             GameManager.Instance.EndGame(); // 게임 종료

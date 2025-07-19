@@ -178,11 +178,11 @@ MonoBehaviour:
   level_1: 0
   level_2: 0
   level_3: 0
-  obj1: {fileID: 6985699969045462821, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
-  obj2: {fileID: 1313978698152854425, guid: 9b91ade9543b2304d91e04458f5668de, type: 3}
-  obj3: {fileID: 6985699969045462821, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
-  height1: 30
-  height2: 60
+  obj1: {fileID: 7360323396354557195, guid: 6c0de07f594bc434eb0272504f8951b6, type: 3}
+  obj2: {fileID: 3763265010483704892, guid: 07317750523c16f469cab98faa87d39b, type: 3}
+  obj3: {fileID: 857372733977516694, guid: 87f44c3d77ee1c8469da7ee785db392c, type: 3}
+  height1: 50
+  height2: 100
 --- !u!1001 &3770486588690526554
 PrefabInstance:
   m_ObjectHideFlags: 0

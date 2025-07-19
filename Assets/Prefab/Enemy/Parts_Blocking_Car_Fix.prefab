@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Parts_Blocking_Car_Fix
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e0ee022366cb37441935c0acbde398ff, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -78,6 +82,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e0ee022366cb37441935c0acbde398ff, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8836114424925114500}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e0ee022366cb37441935c0acbde398ff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 947485707634091378}
   m_SourcePrefab: {fileID: 100100000, guid: e0ee022366cb37441935c0acbde398ff, type: 3}
 --- !u!1 &6985699969045462821 stripped
 GameObject:
@@ -106,7 +113,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -132,3 +139,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5906346, y: 0.49811953, z: 0.35694954}
   m_Center: {x: -0.015914723, y: 0.15261358, z: 0.0002486035}
+--- !u!114 &947485707634091378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985699969045462821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cef4460ad6f37242a3495e4d3f035df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

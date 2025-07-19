@@ -9,6 +9,7 @@ TagManager:
   - Part
   - Enemy
   - Ground
+  - LevelUP
   layers:
   - Default
   - TransparentFX

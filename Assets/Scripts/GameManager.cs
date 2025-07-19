@@ -60,7 +60,7 @@ public class GameManager : Singleton<GameManager>
         onGameEnd?.Invoke();
         onGameEnd = null;
 
-        HashSet<GameObject> _attachedParts = new HashSet<GameObject>(GameManager.Instance.attachedParts);
+        HashSet<GameObject> _attachedParts = new HashSet<GameObject>(attachedParts);
         foreach (var part in _attachedParts)
         {
             part.AddComponent<Rigidbody>(); // Rigidbody 추가
@@ -98,11 +98,20 @@ public class GameManager : Singleton<GameManager>
         rocket.transform.position = new Vector3(0f, -2f, 0f); // 로켓 위치 초기화
         rocket.transform.rotation = Quaternion.identity; // 로켓 회전 초기화
         rocket.GetComponent<Rigidbody>().isKinematic = true; // 로켓 키네마틱
-        foreach (var part in rocketParts)
+
+        HashSet<GameObject> _rocketParts = new HashSet<GameObject>(rocketParts);
+        foreach (var part in _rocketParts)
         {
-            part.SetActive(true); // 파츠 활성화
-            part.GetComponent<DragObject>().enabled = true; // 드래그 가능하도록 설정, 처음엔 disable
-            part.transform.position = new Vector3(UnityEngine.Random.Range(-5f, 5f), UnityEngine.Random.Range(0f, -3f), 0f); // 파츠 위치 초기화
+            GameObject newPart = Instantiate(part);
+            rocketParts.Remove(part);
+            rocketParts.Add(newPart);
+
+            Destroy(part);
+            newPart.SetActive(true);
+            newPart.GetComponent<Rigidbody>().isKinematic = false;
+            newPart.GetComponent<Collider>().isTrigger = false; // 물리엔진 활성화
+            newPart.GetComponent<DragObject>().enabled = true; // 드래그 가능하도록 설정, 처음엔 disable
+            newPart.transform.position = new Vector3(UnityEngine.Random.Range(-5f, 5f), UnityEngine.Random.Range(0f, -3f), 0f); // 파츠 위치 초기화
         }
         endPanel.SetActive(false); // 게임 종료 UI 패널 비활성화
         resetButton.SetActive(false); // 리셋 버튼 비활성화

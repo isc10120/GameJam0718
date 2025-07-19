@@ -9,7 +9,7 @@ public class Movement : MonoBehaviour
 
     Rigidbody rb;
     public float force = 10f;
-    public float rotationSpeed = 5f; // ±â¿ï¾îÁö´Â ¼Óµµ
+    public float rotationSpeed = 5f; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½
 
     Vector3 moveDirection;
 
@@ -25,39 +25,10 @@ public class Movement : MonoBehaviour
     {
         moveDirection = Vector3.zero;
 
-        bool isQ = Input.GetKey(KeyCode.Q);
-        bool isE = Input.GetKey(KeyCode.E);
-
-        if (isQ)
-        {
-            // ¿À¸¥ÂÊ À§ (¿ÞÂÊ ÃßÁøÃ¼ ÀÛµ¿)
-            moveDirection += (transform.up + transform.right).normalized;
-            //moveDirection += (Vector3.up + Vector3.right).normalized;
-        }
-
-        if (isE)
-        {
-            // ¿ÞÂÊ À§ (¿À¸¥ÂÊ ÃßÁøÃ¼ ÀÛµ¿)
-            moveDirection += (transform.up - transform.right).normalized;
-            //moveDirection += (Vector3.up + Vector3.left).normalized;
-        }
-
-        // ÀÌµ¿ Èû Àû¿ë
-        if (moveDirection != Vector3.zero)
-        {
-            rb.AddForce(moveDirection * force);
-
-            // ±â¿ï±â Àû¿ë
-            Quaternion targetRotation = Quaternion.LookRotation(Vector3.forward, moveDirection);
-            rb.MoveRotation(Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.fixedDeltaTime));
-
-
-        }
-
         //transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         Vector3 velocity = rb.velocity;
 
-        // ¿ùµå YÃà ¹æÇâ ¼Óµµ¸¸ Á¦ÇÑ
+        // ï¿½ï¿½ï¿½ï¿½ Yï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (velocity.y > maxUpwardSpeed)
         {
             velocity.y = maxUpwardSpeed;
@@ -68,6 +39,7 @@ public class Movement : MonoBehaviour
     private void Update()
     {
         rb.AddForce(Vector3.up * force);
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
     }
 }
 

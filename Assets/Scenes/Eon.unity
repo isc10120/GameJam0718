@@ -949,6 +949,10 @@ PrefabInstance:
       propertyPath: rocket
       value: 
       objectReference: {fileID: 895198614}
+    - target: {fileID: 2325109812169492476, guid: ceb949ae9d943c049b64ad146fa0e0df, type: 3}
+      propertyPath: basePart
+      value: 
+      objectReference: {fileID: 6689747657868586174, guid: 25ba167920b9bbc498ce21c5b3b3af2e, type: 3}
     - target: {fileID: 4511565642689941158, guid: ceb949ae9d943c049b64ad146fa0e0df, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1589,6 +1593,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 222185807251752156, guid: fc193aa2cf05f0949b7ba6734bf2c7c5, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7468483
+      objectReference: {fileID: 0}
+    - target: {fileID: 222185807251752156, guid: fc193aa2cf05f0949b7ba6734bf2c7c5, type: 3}
+      propertyPath: m_Center.y
+      value: -4.5439925
+      objectReference: {fileID: 0}
     - target: {fileID: 851207486000445123, guid: fc193aa2cf05f0949b7ba6734bf2c7c5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1616509

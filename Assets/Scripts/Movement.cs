@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
 
         }
 
-        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        //transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
     }
 
     private void Update()

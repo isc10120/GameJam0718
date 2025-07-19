@@ -11,6 +11,9 @@ public class PropellentPart : MonoBehaviour
     public float useFuel = 1f;
     private KeyCode keyCode;
 
+    public float mainThrust = 1f;       // 위로 가는 기본 추진력
+    public float sideThrust = 0.1f;
+
     void Start()
     {
         GameManager.Instance.onGameStart += getKeyCode;
@@ -26,11 +29,26 @@ public class PropellentPart : MonoBehaviour
         if (Input.GetKey(keyCode))
         {
             parentRb = GetComponentInParent<Rigidbody>();
-            Debug.Log("plz");
+            //Debug.Log("plz");
             // 자식의 로컬 방향을 월드 방향으로 변환
-            Vector3 worldThrustDir = transform.TransformDirection(localThrustDir);
-            parentRb.AddForceAtPosition(worldThrustDir * thrustPower, transform.position);
-            PlayerManager.Instance.FuelUpdate(useFuel);
+
+            //Vector3 worldThrustDir = transform.TransformDirection(localThrustDir);
+            //parentRb.AddForceAtPosition(worldThrustDir * thrustPower, transform.position);
+            //PlayerManager.Instance.FuelUpdate(useFuel);
+
+            Vector3 thrustPosition = transform.position;
+
+            // 1. 항상 위로 가는 메인 추진력 (월드 좌표 기준)
+            Vector3 upwardForce = Vector3.up * mainThrust;
+
+            // 2. 추진체의 로컬 방향에 따른 보조 힘 (예: 앞이나 옆 방향 기준)
+            Vector3 directionalForce = transform.up * sideThrust;
+
+            // 최종 힘은 합성된 형태
+            Vector3 finalForce = upwardForce + directionalForce;
+
+            // 부모 Rigidbody에 위치 기반 힘 가하기
+            parentRb.AddForceAtPosition(finalForce, thrustPosition, ForceMode.Force);
         }
 
     }

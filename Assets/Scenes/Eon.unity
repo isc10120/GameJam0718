@@ -3583,8 +3583,8 @@ MonoBehaviour:
   durability: 0
   weight: 0
   speed: 0
-  maxFuel: 100
-  currentFuel: 0
+  maxFuel: 200
+  currentFuel: 100
   fuelFillImage: {fileID: 1663057547}
   fuelFillSpeed: 0.5
   distanceImage: {fileID: 2053285425}

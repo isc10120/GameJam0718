@@ -30,6 +30,7 @@ public class PlayerManager : SceneSingleton<PlayerManager>
     void Start()
     {
         GameManager.Instance.onGameReset += SetFuel;
+        GameManager.Instance.onGameReady += SetPlayerInfo;
         startFuel = currentFuel;
         arrowMinY = indicator.anchoredPosition.y;
        // currentFuel = maxFuel;

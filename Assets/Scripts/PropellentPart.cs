@@ -34,7 +34,7 @@ public class PropellentPart : MonoBehaviour
 
             //Vector3 worldThrustDir = transform.TransformDirection(localThrustDir);
             //parentRb.AddForceAtPosition(worldThrustDir * thrustPower, transform.position);
-            //PlayerManager.Instance.FuelUpdate(useFuel);
+  
 
             Vector3 thrustPosition = transform.position;
 
@@ -49,6 +49,7 @@ public class PropellentPart : MonoBehaviour
 
             // 부모 Rigidbody에 위치 기반 힘 가하기
             parentRb.AddForceAtPosition(finalForce, thrustPosition, ForceMode.Force);
+            PlayerManager.Instance.FuelUpdate(useFuel);
         }
 
     }

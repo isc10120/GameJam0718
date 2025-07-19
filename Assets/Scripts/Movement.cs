@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour
 
     Vector3 moveDirection;
 
+    public float maxUpwardSpeed = 10f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -53,6 +55,14 @@ public class Movement : MonoBehaviour
         }
 
         //transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+        Vector3 velocity = rb.velocity;
+
+        // 월드 Y축 방향 속도만 제한
+        if (velocity.y > maxUpwardSpeed)
+        {
+            velocity.y = maxUpwardSpeed;
+            rb.velocity = velocity;
+        }
     }
 
     private void Update()

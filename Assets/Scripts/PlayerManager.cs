@@ -12,8 +12,9 @@ public class PlayerManager : SceneSingleton<PlayerManager>
     public float weight;
     public float speed;
 
-    public float maxFuel = 100f;
-    public float currentFuel;
+    public float maxFuel = 200f;
+    public float currentFuel= 100f;
+    float startFuel;
     public Image fuelFillImage;
     public float fuelFillSpeed = 0.5f;
 
@@ -28,8 +29,10 @@ public class PlayerManager : SceneSingleton<PlayerManager>
 
     void Start()
     {
+        GameManager.Instance.onGameReset += SetFuel;
+        startFuel = currentFuel;
         arrowMinY = indicator.anchoredPosition.y;
-        currentFuel = maxFuel;
+       // currentFuel = maxFuel;
     }
 
     // Update is called once per frame
@@ -39,10 +42,10 @@ public class PlayerManager : SceneSingleton<PlayerManager>
         //FuelUpdate();
     }
 
-    public void SetInitialFeul(float addFeul)
+    public void SetInitialFuel(float addFeul)
     {
-        maxFuel += addFeul;
-        currentFuel = maxFuel;
+        //maxFuel += addFeul;
+        currentFuel += addFeul;
     }
 
     public void FuelUpdate(float consume)
@@ -84,5 +87,11 @@ public class PlayerManager : SceneSingleton<PlayerManager>
             
         }
 
+    }
+
+    public void SetFuel()
+    {
+        currentFuel = startFuel;
+        FuelUpdate(0);
     }
 }

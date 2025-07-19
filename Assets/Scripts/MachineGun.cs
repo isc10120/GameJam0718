@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MachineGun : PartInit
+public class MachineGun : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePoint;        
@@ -13,16 +13,27 @@ public class MachineGun : PartInit
 
     private KeyCode keyCode;
 
-    protected override void Start()
+    void Start()
     {
-        base.Start();
-        keyCode = GetComponent<PartDataManager>().keyCode;
+;
+        KeycodeSet();
+        GameManager.Instance.onGameReset += KeycodeSet;
+
+
+    }
+
+    public void KeycodeSet()
+    {
+
+        GameManager.Instance.onGameStart += getKeyCode;
+
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(keyCode) && Time.time >= lastFireTime + fireCooldown)
+        if (Input.GetKeyDown(keyCode)) //&& Time.time >= lastFireTime + fireCooldown)
         {
+            Debug.Log("bb");
             Fire();
             lastFireTime = Time.time;
         }
@@ -34,5 +45,11 @@ public class MachineGun : PartInit
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.velocity = firePoint.up * bulletSpeed;
         Destroy(bullet, 3f);
+    }
+
+    void getKeyCode()
+    {
+        keyCode = GetComponent<PartDataManager>().keyCode; Debug.Log("Key Mapped: " + keyCode + " to " + name);
+        GameManager.Instance.onGameStart -= getKeyCode;
     }
 }

@@ -31,7 +31,7 @@ public class MachineGun : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(keyCode)) //&& Time.time >= lastFireTime + fireCooldown)
+        if (Input.GetKeyDown(keyCode) && Time.time >= lastFireTime + fireCooldown)
         {
             Debug.Log("bb");
             Fire();

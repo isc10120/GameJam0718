@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2387152031249571939, guid: 6c0de07f594bc434eb0272504f8951b6, type: 3}
       propertyPath: m_Mass
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4011671952883626726, guid: 6c0de07f594bc434eb0272504f8951b6, type: 3}
       propertyPath: m_IsTrigger

@@ -39,6 +39,8 @@ public class ObstacleSpawner : SceneSingleton<ObstacleSpawner>
         spawnPosition.x += Random.Range(-spawnRangeX, spawnRangeX);
         spawnPosition.z = 0f;
 
-        Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+         GameObject obj =  Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+         obj.GetComponent<Rigidbody>().AddForce(Vector3.down * 0.5f, ForceMode.Impulse);
+        
     }
 }

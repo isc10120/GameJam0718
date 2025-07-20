@@ -29,7 +29,7 @@ public class FollowCam : MonoBehaviour
             if (Mathf.Abs(transform.position.y - targetCameraY) < 0.05f)
             {
                 transform.position = new Vector3(transform.position.x, targetCameraY, transform.position.z);
-                isEnd = false;
+                //isEnd = false;
             }
         }
         else

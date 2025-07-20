@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880034515993434701, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
       propertyPath: m_Mass
-      value: 0.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2880034515993434701, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
       propertyPath: m_UseGravity
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6635555035706436154, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
       propertyPath: m_Mesh
@@ -100,7 +100,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5

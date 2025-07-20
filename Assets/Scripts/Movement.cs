@@ -56,12 +56,14 @@ public class Movement : MonoBehaviour
             velocity.y = maxUpwardSpeed;
             rb.velocity = velocity;
         }
+
+        rb.AddForce(Vector3.up * force);
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
     }
 
     private void Update()
     {
-        rb.AddForce(Vector3.up * force);
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+        
 
         if(startGame)
         {

@@ -95,7 +95,7 @@ public class GameManager : SceneSingleton<GameManager>
             part.GetComponent<CollisionInGame>().enabled = false;
             part.GetComponent<Rigidbody>().isKinematic = false;
             part.GetComponent<Collider>().isTrigger = false; 
-            part.transform.position = new Vector3(UnityEngine.Random.Range(-5f, 5f), UnityEngine.Random.Range(0f, -3f), 0f); // 파츠 위치 초기화
+            part.transform.position = new Vector3(UnityEngine.Random.Range(-8f, 8f), 0, 0f); // 파츠 위치 초기화
         }
         
         onGameReset?.Invoke();

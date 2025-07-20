@@ -23,6 +23,12 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(PlayerManager.Instance.currentFuel <=0)
+        {
+            rb.velocity = Vector3.zero;
+            return;
+        }
+
         moveDirection = Vector3.zero;
 
         //transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);

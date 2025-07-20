@@ -8,6 +8,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2799163900539258955, guid: 07317750523c16f469cab98faa87d39b, type: 3}
+      propertyPath: m_Size.x
+      value: 1.29
+      objectReference: {fileID: 0}
+    - target: {fileID: -2799163900539258955, guid: 07317750523c16f469cab98faa87d39b, type: 3}
+      propertyPath: m_Size.y
+      value: 1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: -2799163900539258955, guid: 07317750523c16f469cab98faa87d39b, type: 3}
+      propertyPath: m_Size.z
+      value: 1.04
+      objectReference: {fileID: 0}
     - target: {fileID: 638885179178803491, guid: 07317750523c16f469cab98faa87d39b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -15,22 +27,22 @@ PrefabInstance:
     - target: {fileID: 3402805859903215081, guid: 07317750523c16f469cab98faa87d39b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -2704302366960171809, guid: a78e8448a6f57fb4fb55223ff469152b, type: 3}
+      objectReference: {fileID: 5629084884208175553, guid: 4962f2ce8635975449bcfed515aafbed, type: 3}
     - target: {fileID: 3763265010483704892, guid: 07317750523c16f469cab98faa87d39b, type: 3}
       propertyPath: m_Name
       value: Parts_Blocking_Satellite_2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4571748707673435782, guid: 07317750523c16f469cab98faa87d39b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5421057
+      value: -7.2423167
       objectReference: {fileID: 0}
     - target: {fileID: 4571748707673435782, guid: 07317750523c16f469cab98faa87d39b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 4571748707673435782, guid: 07317750523c16f469cab98faa87d39b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0049322364
+      value: -1.5942456
       objectReference: {fileID: 0}
     - target: {fileID: 4571748707673435782, guid: 07317750523c16f469cab98faa87d39b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -63,6 +75,10 @@ PrefabInstance:
     - target: {fileID: 7327498248551842769, guid: 07317750523c16f469cab98faa87d39b, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8303525731095794004, guid: 07317750523c16f469cab98faa87d39b, type: 3}
+      propertyPath: m_Mass
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

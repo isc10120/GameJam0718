@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2880034515993434701, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
+      propertyPath: m_Mass
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2880034515993434701, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
@@ -63,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 8931426875252072176, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -2704302366960171809, guid: 2ee81a743089e6a4d85ace323bdcf4f1, type: 3}
+      objectReference: {fileID: 5629084884208175553, guid: 4962f2ce8635975449bcfed515aafbed, type: 3}
     m_RemovedComponents:
     - {fileID: 8836114424925114500, guid: d6aab85d6a7baa3479b12c8a0240f2c8, type: 3}
     m_RemovedGameObjects: []

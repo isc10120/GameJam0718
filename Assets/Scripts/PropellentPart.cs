@@ -34,8 +34,11 @@ public class PropellentPart : MonoBehaviour
         {
             if(!isFire)
             {
-                fire.SetActive(true);
-                isFire = true;
+                if (fire != null)
+                {
+                    fire.SetActive(true);
+                    isFire = true;
+                }
             }
 
             if(!isSound)

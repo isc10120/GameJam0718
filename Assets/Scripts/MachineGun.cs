@@ -14,6 +14,8 @@ public class MachineGun : MonoBehaviour
 
     private KeyCode keyCode;
 
+    public float useFuelCnt = 1f;
+
     void Start()
     {
 ;
@@ -36,6 +38,7 @@ public class MachineGun : MonoBehaviour
         {
             Debug.Log("bb");
             Fire();
+            PlayerManager.Instance.FuelUpdate(useFuelCnt);
             lastFireTime = Time.time;
         }
     }

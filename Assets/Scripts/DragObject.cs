@@ -93,7 +93,7 @@ public class DragObject : MonoBehaviour
         gameObject.GetComponent<Rigidbody>().isKinematic = false; // 물리엔진 영향 받음
         gameObject.tag = "Part"; // 태그 초기화
         keyMappingUI.SetActive(false);
-        idleKey.ResetKey(); // IdleKey로 초기화
+        idleKey?.ResetKey(); // IdleKey로 초기화
         // TODO: 로켓정보 수정 PlayerManager
     }
 }

@@ -18,7 +18,9 @@ public class PartDataManager : MonoBehaviour
 
     void getKeyCode()
     {
-        keyCode = transform.Find("Canvas/IdleKey").GetComponent<IdleKey>().GetMappedKeyCode(); // 키 코드 설정
+        Transform idleKey = transform.Find("Canvas/IdleKey");
+        if(idleKey == null) return;
+        keyCode = idleKey.GetComponent<IdleKey>().GetMappedKeyCode(); // 키 코드 설정
         GameManager.Instance.onGameReady -= getKeyCode;
     }
 }

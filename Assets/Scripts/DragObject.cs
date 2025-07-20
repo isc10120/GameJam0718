@@ -79,7 +79,7 @@ public class DragObject : MonoBehaviour
         // transform.position = new Vector3(transform.position.x, transform.position.y, GameManager.Instance.rocket.transform.position.z); 
 
         gameObject.tag = "Rocket";
-        keyMappingUI.SetActive(true);
+        keyMappingUI?.SetActive(true);
         // TODO: 로켓정보 수정 PlayerManager
     }
 
@@ -90,9 +90,10 @@ public class DragObject : MonoBehaviour
         GameManager.Instance.attachedParts.Remove(gameObject);
         GameManager.Instance.rocketParts.Add(gameObject);
         gameObject.transform.SetParent(null); // 로켓의 자식에서 제거
-        gameObject.GetComponent<Rigidbody>().isKinematic = false; // 물리엔진 영향 받음
+        if(gameObject.GetComponent<Rigidbody>()!=null)
+            gameObject.GetComponent<Rigidbody>().isKinematic = false; // 물리엔진 영향 받음
         gameObject.tag = "Part"; // 태그 초기화
-        keyMappingUI.SetActive(false);
+        keyMappingUI?.SetActive(false);
         idleKey?.ResetKey(); // IdleKey로 초기화
         // TODO: 로켓정보 수정 PlayerManager
     }

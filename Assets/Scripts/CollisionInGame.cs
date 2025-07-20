@@ -18,17 +18,7 @@ public class CollisionInGame : MonoBehaviour
             PlayerManager.Instance.durability -= 1;
             Destroy(gameObject);
         }
-        if (other.tag == "Rocket" && tag == "Part")
-        {
-            Debug.Log("Get Part: " + gameObject.name);
-            GameManager.Instance.rocketParts.Add(gameObject);
-            // 획득연출?
-            this.enabled = false; // 더 이상 충돌 감지 안함
-            gameObject.SetActive(false); // 파츠 획득 시 비활성화
-            GetComponent<Rigidbody>().isKinematic = false;
-            GetComponent<Collider>().isTrigger = false; // 물리엔진 활성화
-            GetComponent<DragObject>().enabled = true; // 드래그 가능하게 설정
-        }
+        
         if (other.tag == "Rocket" && tag == "LevelUP")
         {
             Debug.Log("LevelUP: " + ++ObstacleSpawner.Instance.level);

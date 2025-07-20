@@ -59,6 +59,9 @@ public class GameManager : SceneSingleton<GameManager>
 
     public void EndGame()  // 땅에 닿을 시 호출
     {
+        endPanel.SetActive(true); // 게임 종료 UI 패널 활성화
+        resetButton.SetActive(true); // 리셋 버튼 활성화
+        restartButton.SetActive(false);
         onGameEnd?.Invoke();
         onGameEnd = null;
 
@@ -73,9 +76,7 @@ public class GameManager : SceneSingleton<GameManager>
         _attachedParts.Clear();
 
         // TODO: UI 띄우기
-        endPanel.SetActive(true); // 게임 종료 UI 패널 활성화
-        resetButton.SetActive(true); // 리셋 버튼 활성화
-        restartButton.SetActive(false);
+        
         Debug.Log("Game Ended");
     }
 

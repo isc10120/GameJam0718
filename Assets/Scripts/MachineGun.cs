@@ -7,6 +7,7 @@ public class MachineGun : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;        
     public float bulletSpeed = 20f;
+    public float deleteDistance = 1f
 
     public float fireCooldown = 0.5f; // 발사 쿨타임 (0.5초)
     private float lastFireTime = -Mathf.Infinity;
@@ -44,7 +45,7 @@ public class MachineGun : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.velocity = firePoint.up * bulletSpeed;
-        Destroy(bullet, 3f);
+        Destroy(bullet, deleteDistance);
     }
 
     void getKeyCode()

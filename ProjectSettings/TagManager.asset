@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Ground
   - LevelUP
+  - Bullet
   layers:
   - Default
   - TransparentFX

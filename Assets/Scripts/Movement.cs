@@ -14,16 +14,32 @@ public class Movement : MonoBehaviour
     Vector3 moveDirection;
 
     public float maxUpwardSpeed = 10f;
+    public FollowCam cam;
+
+    bool startGame = false;
+    public float gameTime = 0f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        GameManager.Instance.onGameReady += Timeset;
+        GameManager.Instance.onGameReset += TimeReset;
     }
 
+    public void Timeset()
+    {
+        startGame = true;
+    }
+
+    public void TimeReset()
+    {
+        startGame= false;
+        gameTime = 0f;
+    }
 
     void FixedUpdate()
     {
-        if(PlayerManager.Instance.currentFuel <=0)
+        if (PlayerManager.Instance.currentFuel <= 0)
         {
             rb.velocity = Vector3.zero;
             return;
@@ -46,6 +62,20 @@ public class Movement : MonoBehaviour
     {
         rb.AddForce(Vector3.up * force);
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+
+        if(startGame)
+        {
+            gameTime += Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("End"))
+        {
+            cam.isEnd = true;
+
+        }
     }
 }
 

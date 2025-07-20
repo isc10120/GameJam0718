@@ -16,6 +16,7 @@ public class PropellentPart : MonoBehaviour
 
     public GameObject fire;
     bool isFire = false;
+    bool isSound = false;
 
     void Start()
     {
@@ -35,6 +36,12 @@ public class PropellentPart : MonoBehaviour
             {
                 fire.SetActive(true);
                 isFire = true;
+            }
+
+            if(!isSound)
+            {
+                SoundManager.Instance.PlaySE("Boost");
+                isSound = true;
             }
 
             parentRb = GetComponentInParent<Rigidbody>();
@@ -65,6 +72,9 @@ public class PropellentPart : MonoBehaviour
         {
             fire.SetActive(false);
             isFire = false;
+
+            SoundManager.Instance.StopSE("Boost");
+            isSound = false;
         }
 
     }

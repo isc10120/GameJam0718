@@ -9,6 +9,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1309617797997517330, guid: 692e20df88a8f134ea36e4fedec8c5cc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309617797997517330, guid: 692e20df88a8f134ea36e4fedec8c5cc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309617797997517330, guid: 692e20df88a8f134ea36e4fedec8c5cc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309617797997517330, guid: 692e20df88a8f134ea36e4fedec8c5cc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.97
       objectReference: {fileID: 0}
@@ -115,7 +127,7 @@ CapsuleCollider:
   m_Radius: 0.13603416
   m_Height: 0.7751724
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.0000000018626451}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6589257323176190739
 MonoBehaviour:
   m_ObjectHideFlags: 0
